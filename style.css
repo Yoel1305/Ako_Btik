@@ -92,6 +92,15 @@ section {
     margin: 0 auto;
 }
 
+.hero,
+#produits {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
@@ -107,7 +116,11 @@ h2 {
     background-image: url('/images/hero.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
+    position: relative;
+    /* ← OBLIGATOIRE */
+    overflow: hidden;
+    /* ← évite que l’overlay déborde */
 
     display: flex;
     align-items: center;
@@ -315,6 +328,55 @@ h2 {
     background: rgba(0, 87, 255, 0.45);
     transform: translateY(-4px) scale(1.03);
 }
+
+/* Rend les liens clicables dans contact-item */
+.contact-item a {
+    display: inline-block;
+    pointer-events: auto;
+}
+
+.contact-item {
+    pointer-events: auto;
+}
+
+.contact-item:hover {
+    pointer-events: auto;
+}
+
+.contact-item:hover {
+    background: rgba(0, 87, 255, 0.25) !important;
+}
+
+/* Rend toute la carte contact-item cliquable */
+.contact-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-item .contact-link {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    /* le lien couvre toute la carte */
+}
+
+/* Le contenu reste cliquable par dessus */
+.contact-item i,
+.contact-item p {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.contact-item-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+
+
 
 /* ===============================
    FOOTER

@@ -128,10 +128,53 @@ function checkout(total) {
   for (const [id, p] of Object.entries(cart)) {
     message += `${p.categorie} — ${p.nom} ×${p.qty} = ${(p.qty * p.prix).toLocaleString()} FCFA\n`;
   }
-  message += `\nTotal : ${total.toLocaleString()} FCFA\n\nMerci pour votre commande !`;
+  message += `\nTotal : ${total.toLocaleString()} FCFA\n\n🙏Merci pour votre commande \n\nPour que votre commande soit traitée, veuillez procéder au paiement par YAS ou FLOOZ sur le numéro correspondant :\n\n💳YAS : +228 92 00 00 00 \n\n💳FLOOZ : +228 99 00 00 00\n\n📸NB: N'oubliez pas de me renvoyer une preuve du paiement effectué.\n\n💙Merci d'avoir contacter AKO B'TIK. \n🦜✨AKO vous partage les bons plans - Presque tout - Partout - et pour Toi🦜✨`;
   const encoded = encodeURIComponent(message);
-  window.open(`[wa.me](https://wa.me/22892000000?text=${encoded})`, "_blank");
+  window.open(`https://wa.me/33758344875?text=${encoded}`, "_blank");
 }
+
+// ----- Envoi WhatsApp -----
+// function checkout(total) {
+//   if (Object.keys(cart).length === 0) return;
+//   let message = "🧾 *Récapitulatif de votre commande chez Ako B'tik :*\n";
+
+//   // 🔹 Détails par article
+//   for (const [id, p] of Object.entries(cart)) {
+//     message += `${p.categorie} — ${p.nom} ×${p.qty} = ${(p.qty * p.prix).toLocaleString()} FCFA\n`;
+//   }
+
+//   // 🔹 Sous-total
+//   message += `\n\n🛍️ *Sous-total articles :* ${total.toLocaleString()} FCFA`;
+
+//   // 🔹 Remise
+//   if (remise > 0) {
+//     message += `\n🎁 *Remise :* -${remise.toLocaleString()} FCFA`;
+//   } else {
+//     message += `\n🎁 *Remise :* 0 FCFA`;
+//   }
+
+//   // 🔹 Livraison
+//   if (livraison === 0) {
+//     message += `\n🚚 *Livraison :* GRATUIT`;
+//   } else {
+//     message += `\n🚚 *Livraison :* ${livraison.toLocaleString()} FCFA`;
+//   }
+
+//   // 🔹 TOTAL FINAL
+//   message += `\n\n💰 *TOTAL À PAYER :* ${totalFinal.toLocaleString()} FCFA`;
+
+//   // 🔹 Message de fin
+//   message += `\n\n🙏 Merci pour votre commande !
+// \n📦 Pour que votre commande soit traitée, veuillez procéder au paiement par *YAS* ou *FLOOZ* :
+// \n💳 *YAS* : +228 92 00 00 00
+// \n💳 *FLOOZ* : +228 99 00 00 00
+// \n📸 *NB : envoyez une preuve du paiement.*
+// \n💙 Merci d'avoir contacté *AKO B'TIK* 🦜
+// \n🦜✨ Ako vous partage les bons plans — Presque tout, Partout, et Pour Toi ✨`;
+
+//   const encoded = encodeURIComponent(message);
+//   window.open(`https://wa.me/33758344875?text=${encoded}`, "_blank");
+// }
 
 // ----- Réinitialisation uniquement sur rechargement complet -----
 window.addEventListener("beforeunload", (e) => {
