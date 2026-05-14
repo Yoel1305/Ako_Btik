@@ -122,14 +122,83 @@ function renderCart(show) {
 }
 
 // ----- Envoi WhatsApp -----
-function checkout(total) {
+// function checkout(total) {
+//   if (Object.keys(cart).length === 0) return;
+//   let message = "🛍 Nouvelle commande Ako B’tik !\n\n";
+//   for (const [id, p] of Object.entries(cart)) {
+//     message += `${p.categorie} — ${p.nom} ×${p.qty} = ${(p.qty * p.prix).toLocaleString()} FCFA\n`;
+//   }
+//   message += `\nTotal : ${total.toLocaleString()} FCFA\n\n🙏Merci pour votre commande \n\nPour que votre commande soit traitée, veuillez procéder au paiement par YAS ou FLOOZ sur le numéro correspondant :\n\n💳YAS : +228 92 00 00 00 \n\n💳FLOOZ : +228 99 00 00 00\n\n📸NB: N'oubliez pas de me renvoyer une preuve du paiement effectué.\n\n💙Merci d'avoir contacter AKO B'TIK. \n🦜✨AKO vous partage les bons plans - Presque tout - Partout - et pour Toi🦜✨`;
+//   const encoded = encodeURIComponent(message);
+//   window.open(`https://wa.me/33758344875?text=${encoded}`, "_blank");
+// }
+
+function checkout() {
   if (Object.keys(cart).length === 0) return;
-  let message = "🛍 Nouvelle commande Ako B’tik !\n\n";
+
+  let sousTotal = 0;
+
+  let message = "🧾 *RÉCAPITULATIF DE VOTRE COMMANDE*\n";
+  message += "━━━━━━━━━━━━━━━\n\n";
+
+  // 🔹 Produits
   for (const [id, p] of Object.entries(cart)) {
-    message += `${p.categorie} — ${p.nom} ×${p.qty} = ${(p.qty * p.prix).toLocaleString()} FCFA\n`;
+    const totalProduit = p.qty * p.prix;
+    sousTotal += totalProduit;
+
+    message += `▪️ *${p.nom}*\n`;
+    message += `   ${p.qty} × ${p.prix.toLocaleString()} FCFA`;
+    message += ` = *${totalProduit.toLocaleString()} FCFA*\n\n`;
   }
-  message += `\nTotal : ${total.toLocaleString()} FCFA\n\n🙏Merci pour votre commande \n\nPour que votre commande soit traitée, veuillez procéder au paiement par YAS ou FLOOZ sur le numéro correspondant :\n\n💳YAS : +228 92 00 00 00 \n\n💳FLOOZ : +228 99 00 00 00\n\n📸NB: N'oubliez pas de me renvoyer une preuve du paiement effectué.\n\n💙Merci d'avoir contacter AKO B'TIK. \n🦜✨AKO vous partage les bons plans - Presque tout - Partout - et pour Toi🦜✨`;
+
+  // 🔹 Remise
+  let remise = 0;
+
+  if (sousTotal >= 50000) {
+    remise = 5000;
+  } else if (sousTotal >= 15000) {
+    remise = 2000;
+  }
+
+  // 🔹 Livraison
+  let livraison = sousTotal >= 10000 ? 0 : 1000;
+
+  // 🔹 Total final
+  const totalFinal = sousTotal - remise + livraison;
+
+  // 🔹 Résumé facture
+  message += "━━━━━━━━━━━━━━━\n";
+  message += `🛍️ *Sous-total :* ${sousTotal.toLocaleString()} FCFA\n`;
+  message += `🎁 *Remise :* -${remise.toLocaleString()} FCFA\n`;
+
+  if (livraison === 0) {
+    message += `🚚 *Livraison :* GRATUITE\n`;
+  } else {
+    message += `🚚 *Livraison :* ${livraison.toLocaleString()} FCFA\n`;
+  }
+
+  message += "\n";
+  message += `💰 *TOTAL À PAYER : ${totalFinal.toLocaleString()} FCFA*\n`;
+  message += "━━━━━━━━━━━━━━━\n\n";
+
+  // 🔹 Paiement
+  message += "🙏 Merci pour votre commande ❤️\n\n";
+
+  message += "📲 *Paiement disponible via :*\n\n";
+
+  message += "💳 *YAS* : +228 92 00 00 00\n";
+  message += "💳 *FLOOZ* : +228 99 00 00 00\n\n";
+
+  message +=
+    "📸 *NB :* Pourque votre commande soit traitée, veuillez envoyer une preuve du paiement.\n\n";
+
+  message += "🦜✨ *AKO B'TIK vous partage les bons plans*\n";
+  message += "_Presque tout • Partout • Pour toi_";
+
+  // 🔹 Encodage WhatsApp
   const encoded = encodeURIComponent(message);
+
+  // 🔹 Ouvre WhatsApp
   window.open(`https://wa.me/33758344875?text=${encoded}`, "_blank");
 }
 
