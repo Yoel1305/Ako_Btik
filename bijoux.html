@@ -4,63 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bijoux | Ako B’tik</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bijoux | Ako B'tik</title>
     <link rel="stylesheet" href="design-guide.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <!-- NAVIGATION -->
     <header class="navbar">
         <div class="navbar-container">
-            <div class="logo">
-                <img src="images/Ako-Btik-Profile-2.png" alt="Ako B’tik">
-                <span class="brand-name">Ako B’tik</span>
-            </div>
+            <a class="logo" href="index.html" aria-label="Accueil Ako B'tik">
+                <img src="images/Ako-Btik-Profile-2.png" alt="Logo Ako B'tik">
+                <span class="brand-name">Ako B'tik</span>
+            </a>
 
-            <nav class="nav-links">
+            <nav class="nav-links" aria-label="Navigation principale">
                 <a href="index.html">Accueil</a>
-                <a href="#" class="active">Bijoux</a>
-                <a href="#" id="openCart" class="cart-link">🛒<span id="cartCount">0</span></a>
+                <a href="bijoux.html" class="active">Bijoux</a>
+                <a href="#panier" id="openCart" class="cart-link" aria-label="Ouvrir le panier">
+                    Panier <span id="cartCount">0</span>
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- CONTENU PRINCIPAL -->
-    <section class="category-page fade-in">
-        <h2>Bijoux</h2>
-        <p class="category-subtitle">Découvrez nos bijoux élégants sélectionnés avec soin.</p>
+    <main>
+        <section class="category-page reveal">
+            <h1>Bijoux</h1>
+            <p class="category-subtitle">Découvrez nos bijoux élégants sélectionnés avec soin.</p>
+            <div class="product-grid" id="productList"></div>
+        </section>
+    </main>
 
-        <div class="product-grid" id="productList"></div>
-    </section>
-
-    <!-- PANIER LATÉRAL -->
-    <div id="cartPanel" class="cart-panel hidden">
+    <aside id="cartPanel" class="cart-panel" aria-label="Panier" aria-hidden="true">
         <div class="cart-header">
-            <h2>🛒 Votre panier</h2>
-            <button id="closeCart">✖</button>
+            <div class="cart-header-content">
+                <p class="cart-header-title">Votre panier</p>
+            </div>
+            <button id="closeCart" class="cart-close-btn" type="button" aria-label="Fermer le panier">×</button>
         </div>
         <div id="cartItems"></div>
         <div id="cartSummary"></div>
-    </div>
+    </aside>
 
     <script src="script.js"></script>
-
     <script>
-        // --- Produits Bijoux ---
         const products = [
-            { id: "B1", nom: "Montre dame", prix: 5000, image: "img/bijou-montre.jpg", categorie: "Bijoux" },
-            { id: "B2", nom: "Chaîne de pied", prix: 2000, image: "img/bijou-chaine.jpg", categorie: "Bijoux" },
-            { id: "B3", nom: "Collier simple", prix: 3000, image: "img/bijou-collier.jpg", categorie: "Bijoux" },
-            { id: "B4", nom: "Set 4 en 1", prix: 8000, image: "img/bijou-set.jpg", categorie: "Bijoux" },
-            { id: "B5", nom: "Boucles d’oreilles inoxydables", prix: 2500, image: "img/bijou-boucle.jpg", categorie: "Bijoux" }
+            { id: "B1", nom: "Montre dame", prix: 5000, image: "images/categorie_Bijoux.png", categorie: "Bijoux" },
+            { id: "B2", nom: "Chaîne de pied", prix: 2000, image: "images/categorie_Bijoux.png", categorie: "Bijoux" },
+            { id: "B3", nom: "Collier simple", prix: 3000, image: "images/categorie_Bijoux.png", categorie: "Bijoux" },
+            { id: "B4", nom: "Set 4 en 1", prix: 8000, image: "images/categorie_Bijoux.png", categorie: "Bijoux" },
+            { id: "B5", nom: "Boucles d'oreilles inoxydables", prix: 2500, image: "images/categorie_Bijoux.png", categorie: "Bijoux" }
         ];
 
-        // Charger la catégorie
         loadCategory(products);
     </script>
-
 </body>
 
 </html>

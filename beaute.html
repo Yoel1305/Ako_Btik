@@ -4,60 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautés | Ako B’tik</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Beauté | Ako B'tik</title>
     <link rel="stylesheet" href="design-guide.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <!-- NAVIGATION -->
     <header class="navbar">
         <div class="navbar-container">
-            <div class="logo">
-                <img src="images/Ako-Btik-Profile-2.png" alt="Ako B’tik">
-                <span class="brand-name">Ako B’tik</span>
-            </div>
+            <a class="logo" href="index.html" aria-label="Accueil Ako B'tik">
+                <img src="images/Ako-Btik-Profile-2.png" alt="Logo Ako B'tik">
+                <span class="brand-name">Ako B'tik</span>
+            </a>
 
-            <nav class="nav-links">
+            <nav class="nav-links" aria-label="Navigation principale">
                 <a href="index.html">Accueil</a>
-                <a href="#" class="active">Beautés</a>
-                <a href="#" id="openCart" class="cart-link">🛒<span id="cartCount">0</span></a>
+                <a href="beaute.html" class="active">Beauté</a>
+                <a href="#panier" id="openCart" class="cart-link" aria-label="Ouvrir le panier">
+                    Panier <span id="cartCount">0</span>
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- CONTENU PRINCIPAL -->
-    <section class="category-page fade-in">
-        <h2>Beautés</h2>
-        <p class="category-subtitle">Soins et accessoires pour sublimer ta beauté au quotidien.</p>
+    <main>
+        <section class="category-page reveal">
+            <h1>Beauté</h1>
+            <p class="category-subtitle">Soins et accessoires pour sublimer ta beauté au quotidien.</p>
+            <div class="product-grid" id="productList"></div>
+        </section>
+    </main>
 
-        <div class="product-grid" id="productList"></div>
-    </section>
-
-    <!-- PANIER LATÉRAL -->
-    <div id="cartPanel" class="cart-panel hidden">
+    <aside id="cartPanel" class="cart-panel" aria-label="Panier" aria-hidden="true">
         <div class="cart-header">
-            <h2>🛒 Votre panier</h2>
-            <button id="closeCart">✖</button>
+            <div class="cart-header-content">
+                <p class="cart-header-title">Votre panier</p>
+            </div>
+            <button id="closeCart" class="cart-close-btn" type="button" aria-label="Fermer le panier">×</button>
         </div>
         <div id="cartItems"></div>
         <div id="cartSummary"></div>
-    </div>
+    </aside>
 
     <script src="script.js"></script>
     <script>
         const products = [
-            { id: "BT1", nom: "Gloss colorant", prix: 1500, image: "img/beaute-gloss.jpg", categorie: "Beautés" },
-            { id: "BT2", nom: "Faux cils premium", prix: 2000, image: "img/beaute-cils.jpg", categorie: "Beautés" },
-            { id: "BT3", nom: "Rouge à lèvres mat", prix: 3000, image: "img/beaute-rouge.jpg", categorie: "Beautés" },
-            { id: "BT4", nom: "Vernis pastel", prix: 1200, image: "img/beaute-vernis.jpg", categorie: "Beautés" },
-            { id: "BT5", nom: "Crème éclat visage", prix: 3500, image: "img/beaute-creme.jpg", categorie: "Beautés" }
+            { id: "BT1", nom: "Gloss colorant", prix: 1500, image: "images/categorie_Beautes.png", categorie: "Beauté" },
+            { id: "BT2", nom: "Faux cils premium", prix: 2000, image: "images/categorie_Beautes.png", categorie: "Beauté" },
+            { id: "BT3", nom: "Rouge à lèvres mat", prix: 3000, image: "images/categorie_Beautes.png", categorie: "Beauté" },
+            { id: "BT4", nom: "Vernis pastel", prix: 1200, image: "images/categorie_Beautes.png", categorie: "Beauté" },
+            { id: "BT5", nom: "Crème éclat visage", prix: 3500, image: "images/categorie_Beautes.png", categorie: "Beauté" }
         ];
 
         loadCategory(products);
     </script>
-
 </body>
 
 </html>

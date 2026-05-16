@@ -1,103 +1,76 @@
-/* ==========================
-   🎨  PALETTE OFFICIELLE
-   ========================== */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap");
+
 :root {
-    /* Couleurs principales */
-    --bleu-vif: #0057FF;
-    /* bleu du logo */
-    --bleu-pastel: #CFE5FF;
-    /* fond doux */
-    --orange-accent: #FF7A00;
-    /* bec du perroquet */
-    --gris-clair: #F7F9FC;
-    --gris-moyen: #D9E1EF;
-    --blanc: #FFFFFF;
-
-    /* Couleurs de texte */
-    --texte-primaire: #1E1E1E;
-    --texte-secondaire: #555;
-    --texte-clair: #FAFAFA;
-
-    /* Dégradé de fond signature Ako B’tik */
-    --gradient-ako: linear-gradient(135deg, #7DB8FF 0%, #0057FF 85%);
+    --bleu-vif: #0057ff;
+    --bleu-profond: #063a9b;
+    --bleu-pastel: #d9ecff;
+    --orange-accent: #ff7a00;
+    --orange-doux: #fff1e5;
+    --gris-clair: #f6f8fc;
+    --gris-moyen: #d9e1ef;
+    --blanc: #ffffff;
+    --texte-primaire: #171b26;
+    --texte-secondaire: #596174;
+    --texte-clair: #fafafa;
+    --gradient-ako: linear-gradient(135deg, #0057ff 0%, #2d8cff 58%, #ff7a00 130%);
+    --ombre-douce: 0 16px 45px rgba(17, 34, 64, 0.12);
+    --ombre-carte: 0 10px 30px rgba(17, 34, 64, 0.1);
+    --transition: 220ms ease;
 }
 
-/* ==========================
-   🖋️  TYPOGRAPHIE
-   ========================== */
-@import url('[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@600&display=swap)');
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
     color: var(--texte-primaire);
-    background-color: var(--gris-clair);
+    background: var(--gris-clair);
 }
 
-/* Titres principaux */
-h1,
-h2,
-h3 {
-    color: var(--bleu-vif);
-    font-weight: 700;
-    letter-spacing: 0.5px;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-/* Slogans ou éléments ludiques */
-.slogan,
-.handwritten {
-    font-family: 'Dancing Script', cursive;
-    color: var(--bleu-vif);
-    font-size: 1.5em;
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
-/* ==========================
-   🧩  ÉLÉMENTS DE STYLE
-   ========================== */
+img {
+    display: block;
+    max-width: 100%;
+}
 
-/* Boutons basiques */
 .btn {
-    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    border: 0;
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 12px 22px;
     cursor: pointer;
-    font-weight: 600;
-    transition: all .3s ease;
+    font-weight: 700;
+    transition: transform var(--transition), filter var(--transition), box-shadow var(--transition);
 }
 
 .btn-primary {
     background: var(--gradient-ako);
     color: var(--blanc);
+    box-shadow: 0 12px 30px rgba(0, 87, 255, 0.22);
 }
 
-.btn-primary:hover {
-    filter: brightness(1.1);
-}
-
-.btn-secondary {
-    background: var(--bleu-pastel);
-    color: var(--bleu-vif);
-    border: 1px solid var(--bleu-vif);
-}
-
-/* Cartes ou encadrés */
-.card {
-    background: var(--blanc);
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, .05);
-    padding: 20px;
-}
-
-/* Ombres douces pour effet pastel 3D */
-.shadow-soft {
-    box-shadow: 0 4px 14px rgba(0, 87, 255, .1);
-}
-
-/* Liens stylés */
-a {
-    color: var(--bleu-vif);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--orange-accent);
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    filter: brightness(1.06);
+    transform: translateY(-2px);
 }

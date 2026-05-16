@@ -4,164 +4,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ako B’tik | Ako ne fait pas kpakpato</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ako B'tik | Ako ne fait pas kpakpato</title>
+    <meta name="description" content="Ako B'tik vous partage les bons plans : bijoux, beauté et accessoires.">
     <link rel="stylesheet" href="design-guide.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet"
-        href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css)">
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-
-    <!-- NAVIGATION -->
     <header class="navbar">
         <div class="navbar-container">
-            <div class="logo">
-                <img src="images/Ako-Btik-Profile-2.png" alt="Logo Ako B’tik">
-                <span class="brand-name">Ako B’tik</span>
-            </div>
+            <a class="logo" href="index.html" aria-label="Accueil Ako B'tik">
+                <img src="images/Ako-Btik-Profile-2.png" alt="Logo Ako B'tik">
+                <span class="brand-name">Ako B'tik</span>
+            </a>
 
-            <nav class="nav-links">
+            <nav class="nav-links" aria-label="Navigation principale">
                 <a href="index.html" class="active">Accueil</a>
                 <a href="#produits">Produits</a>
                 <a href="#a-propos">À propos</a>
                 <a href="#contact">Contact</a>
-                <a href="#" id="openCart" class="cart-link">🛒<span id="cartCount">0</span></a>
+                <a href="#panier" id="openCart" class="cart-link" aria-label="Ouvrir le panier">
+                    Panier <span id="cartCount">0</span>
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- ACCUEIL -->
-    <section class="hero fade-in">
-        <div class="hero-content">
-            <h1 class="hero-title">Ako B’tik</h1>
+    <main>
+        <section class="hero reveal">
+            <div class="hero-content">
+                <h1 class="hero-title">Ako B'tik</h1>
+                <p class="signature"><span id="typing-text"></span></p>
+                <a href="#produits" class="btn btn-primary">Explorer nos produits</a>
+            </div>
+        </section>
 
-            <p class="signature">
-                <span id="typing-text"></span>
-            </p>
+        <section id="produits" class="section categories reveal">
+            <div class="section-inner">
+                <h2>Nos catégories</h2>
+                <div class="category-grid">
+                    <button class="category-card" type="button" data-category-page="bijoux.html">
+                        <img src="images/categorie_Bijoux.png" alt="Bijoux">
+                        <span class="category-overlay">
+                            <span>Bijoux</span>
+                        </span>
+                    </button>
 
-            <a href="#produits" class="btn btn-primary">Explorer nos produits</a>
-        </div>
-    </section>
-
-
-    <!-- PRODUITS -->
-    <section id="produits" class="section categories fade-in">
-        <h2>Nos Catégories</h2>
-        <div class="category-grid">
-            <div class="category-card" onclick="openCategory('bijoux.html')">
-                <img src="images/categorie_Bijoux.png" alt="Bijoux">
-                <div class="category-overlay">
-                    <h3>Bijoux</h3>
+                    <button class="category-card" type="button" data-category-page="beaute.html">
+                        <img src="images/categorie_Beautes.png" alt="Beauté">
+                        <span class="category-overlay">
+                            <span>Beauté</span>
+                        </span>
+                    </button>
                 </div>
             </div>
+        </section>
 
-            <div class="category-card" onclick="openCategory('beaute.html')">
-                <img src="images/categorie_Beautés.png" alt="Beauté">
-                <div class="category-overlay">
-                    <h3>Beautés</h3>
+        <section id="a-propos" class="about-card reveal">
+            <h2>À propos de Ako B'tik</h2>
+            <p>Ako B'tik vous partage les bons plans. Presque tout, partout et pour toi.</p>
+        </section>
+
+        <section id="contact" class="section contact reveal">
+            <div class="section-inner">
+                <h2>Contact</h2>
+                <div class="contact-container">
+                    <a href="https://wa.me/33758344875" target="_blank" rel="noopener" class="contact-item-link">
+                        <span class="contact-item">
+                            <i class="fab fa-whatsapp contact-icon" aria-hidden="true"></i>
+                            <strong>WhatsApp</strong>
+                            <span>+33 7 58 34 48 75</span>
+                        </span>
+                    </a>
+
+                    <a href="https://www.instagram.com/13_jojo_07" target="_blank" rel="noopener" class="contact-item-link">
+                        <span class="contact-item">
+                            <i class="fab fa-instagram contact-icon" aria-hidden="true"></i>
+                            <strong>Instagram</strong>
+                            <span>@Ako B'tik</span>
+                        </span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@rynel1307?_r=1&_t=ZS-96BaJTv39xF" target="_blank" rel="noopener" class="contact-item-link">
+                        <span class="contact-item">
+                            <i class="fab fa-tiktok contact-icon" aria-hidden="true"></i>
+                            <strong>TikTok</strong>
+                            <span>@Ako B'tik</span>
+                        </span>
+                    </a>
+
+                    <a href="https://snapchat.com/t/iJcbgVIh" target="_blank" rel="noopener" class="contact-item-link">
+                        <span class="contact-item">
+                            <i class="fab fa-snapchat contact-icon" aria-hidden="true"></i>
+                            <strong>Snapchat</strong>
+                            <span>@Ako B'tik</span>
+                        </span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- À PROPOS -->
-    <section id="a-propos" class="about-card">
-        <h2>À propos de "Ako B'tik"</h2>
-        <p>
-            Ako B’tik vous partage les bons plans. Presque Tout-- Partout et Pour Toi
-        </p>
-    </section>
-
-
-    <!-- CONTACT -->
-    <!-- <section id="contact" class="section contact fade-in">
-        <h2>Contactez-nous</h2>
-        <p>Retrouvez-nous sur les réseaux sociaux</p>
-        <div class="socials">
-            <a href="#"><img src="icons/tiktok.svg" alt="TikTok"></a>
-            <a href="#"><img src="icons/facebook.svg" alt="Facebook"></a>
-            <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
-            <a href="#"><img src="icons/whatsapp.svg" alt="WhatsApp"></a>
-        </div>
-    </section> -->
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-container">
-
-            <!-- WHATSAPP -->
-            <a href="https://wa.me/33758344875" target="_blank" class="contact-item-link">
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp contact-icon"></i>
-                    <p>WhatsApp</p>
-                    <p>+33 7 58 34 48 75</p>
-                </div>
-            </a>
-
-            <!-- INSTAGRAM -->
-            <a href="https://www.instagram.com/13_jojo_07" target="_blank" class="contact-item-link">
-
-                <div class="contact-item">
-                    <i class="fab fa-instagram contact-icon"></i>
-                    <p>Instagram</p>
-                    <p>@Ako B'tik</p>
-                </div>
-            </a>
-
-            <!-- TIKTOK -->
-            <a href="https://www.tiktok.com/@rynel1307?_r=1&_t=ZS-96BaJTv39xF" target="_blank"
-                class="contact-item-link">
-                <div class="contact-item">
-                    <i class="fab fa-tiktok contact-icon"></i>
-                    <p>TikTok</p>
-                    <p>@Ako B'tik</p>
-                </div>
-            </a>
-
-            <!-- SNAPCHAT -->
-            <a href="https://snapchat.com/t/iJcbgVIh" target="_blank" class="contact-item-link">
-                <div class="contact-item">
-                    <i class="fab fa-snapchat contact-icon"></i>
-                    <p>Snapchat</p>
-                    <p>@Ako B'tik</p>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-
-    <!-- PANIER -->
-    <div id="cartPanel" class="cart-panel hidden">
+    <aside id="cartPanel" class="cart-panel" aria-label="Panier" aria-hidden="true">
         <div class="cart-header">
             <div class="cart-header-content">
-                <img src="icons/cart-white.png" class="cart-header-icon">
                 <p class="cart-header-title">Votre panier</p>
             </div>
-
-            <button id="closeCart" class="cart-close-btn">✖</button>
+            <button id="closeCart" class="cart-close-btn" type="button" aria-label="Fermer le panier">×</button>
         </div>
-
         <div id="cartItems"></div>
         <div id="cartSummary"></div>
-    </div>
+    </aside>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <p>&copy; 2026 Ako B'tik. Tous droits réservés.</p>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-snapchat"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-social" aria-label="Réseaux sociaux">
+                <a href="https://www.instagram.com/13_jojo_07" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@rynel1307?_r=1&_t=ZS-96BaJTv39xF" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://snapchat.com/t/iJcbgVIh" target="_blank" rel="noopener" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
+                <a href="https://wa.me/33758344875" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
-
 
     <script src="script.js"></script>
 </body>
